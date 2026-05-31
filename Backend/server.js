@@ -17,5 +17,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Production server engine processing data on port ${PORT}`);
+  console.log(`server engine processing data on port ${PORT}`);
 });
