@@ -34,7 +34,7 @@ export default function ApplyPage() {
 
     setLoading(true);
     try {
-      const response = await fetch('/api/applications', {
+      const response = await fetch('https://loan-application-qwqs.onrender.com/api/applications', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

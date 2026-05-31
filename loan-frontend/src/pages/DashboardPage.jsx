@@ -12,11 +12,11 @@ export default function DashboardPage() {
     setLoading(true);
     try {
       // Build filter endpoint URL path dynamically
-      const appUrl = filter ? `/api/applications?status=${filter}` : '/api/applications';
+      const appUrl = filter ? `https://loan-application-qwqs.onrender.com/api/applications?status=${filter}` : 'https://loan-application-qwqs.onrender.com/api/applications';
       
       const [appRes, summaryRes] = await Promise.all([
         fetch(appUrl),
-        fetch('/api/summary')
+        fetch('https://loan-application-qwqs.onrender.com/api/summary')
       ]);
 
       if (appRes.ok && summaryRes.ok) {
@@ -41,7 +41,7 @@ export default function DashboardPage() {
     );
     
     // Refresh the statistics values out-of-band
-    fetch('/api/summary')
+    fetch('https://loan-application-qwqs.onrender.com/api/summary')
       .then(res => res.json())
       .then(data => setSummary(data))
       .catch(err => console.error(err));

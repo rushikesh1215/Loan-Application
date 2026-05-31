@@ -6,7 +6,7 @@ export default function ApplicationRow({ app, onStatusUpdate }) {
   const updateStatus = async (newStatus) => {
     setLoading(true);
     try {
-      const response = await fetch(`/api/applications/${app.id}/status`, {
+      const response = await fetch(`https://loan-application-qwqs.onrender.com/api/applications/${app.id}/status`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })
