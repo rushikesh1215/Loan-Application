@@ -1,11 +1,22 @@
 require('dotenv').config();
 const express = require('express');
 const apiRoutes = require('./routes/api.routes');
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(
+  cors({
+    origin: "https://loan-application-aa354ehbo-rushikesh1694-5423s.vercel.app",
+    methods: ["GET", "POST", "PATCH"],
+    credentials: true,
+  })
+);
+
+
 app.use(express.json());
+
 
 app.use('/api', apiRoutes);
 
